@@ -1,0 +1,408 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ==========================================
+   AESTHETIC ENHANCEMENTS - Inspired by Reference Designs
+   ========================================== */
+
+/* Smooth gradient backgrounds with cream/beige tones */
+.aesthetic-gradient {
+    background: linear-gradient(135deg, #fdfcfb 0%, #f5f3ee 50%, #ebe8e0 100%);
+}
+
+:is(.dark) .aesthetic-gradient {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* Elegant card styling with subtle shadows */
+.aesthetic-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(139, 92, 46, 0.1);
+    box-shadow: 0 8px 32px rgba(139, 92, 46, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:is(.dark) .aesthetic-card {
+    background: rgba(30, 41, 59, 0.95);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.aesthetic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px rgba(139, 92, 46, 0.15);
+}
+
+:is(.dark) .aesthetic-card:hover {
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+}
+
+/* Sophisticated button styling */
+.aesthetic-button {
+    background: linear-gradient(135deg, #8b5c2e 0%, #6b4423 100%);
+    color: #fdfcfb;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 20px rgba(139, 92, 46, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.aesthetic-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(139, 92, 46, 0.4);
+    background: linear-gradient(135deg, #6b4423 0%, #8b5c2e 100%);
+}
+
+/* Elegant text styling */
+.aesthetic-heading {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    color: #2d1810;
+}
+
+:is(.dark) .aesthetic-heading {
+    color: #f5f3ee;
+}
+
+/* Decorative underline for headings */
+.aesthetic-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.aesthetic-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, #8b5c2e 0%, transparent 100%);
+    border-radius: 2px;
+}
+
+/* ==========================================
+   FIXED INPUT STYLES (Standard CSS)
+   ========================================== */
+
+.input-field {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Times New Roman', Times, serif;
+    
+    /* LIGHT MODE - Cream/Beige aesthetic */
+    background-color: #fdfcfb;
+    border: 2px solid #e8e3d9;
+    color: #2d1810;
+}
+
+.input-field::placeholder {
+    color: #a89f8f;
+}
+
+.input-field:focus {
+    border-color: #8b5c2e;
+    box-shadow: 0 0 0 4px rgba(139, 92, 46, 0.15);
+    background-color: #ffffff;
+}
+
+/* DARK MODE OVERRIDES */
+.dark .input-field {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #ffffff;
+}
+
+.dark .input-field::placeholder {
+    color: #64748b;
+}
+
+.dark .input-field:focus {
+    border-color: #14b8a6;
+    box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.2);
+}
+
+/* ==========================================
+   MENTOR CARD ENHANCEMENTS
+   ========================================== */
+
+.mentor-card {
+    background: linear-gradient(135deg, #fdfcfb 0%, #f9f7f4 100%);
+    border: 2px solid #e8e3d9;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.mentor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #8b5c2e 0%, #d4a574 100%);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.mentor-card:hover::before {
+    transform: scaleX(1);
+}
+
+.mentor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(139, 92, 46, 0.2);
+    border-color: #8b5c2e;
+}
+
+:is(.dark) .mentor-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-color: #334155;
+}
+
+:is(.dark) .mentor-card:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+    border-color: #14b8a6;
+}
+
+/* Email link styling */
+.mentor-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #8b5c2e;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(139, 92, 46, 0.08);
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.mentor-email:hover {
+    background: rgba(139, 92, 46, 0.15);
+    color: #6b4423;
+    transform: translateX(2px);
+}
+
+:is(.dark) .mentor-email {
+    color: #14b8a6;
+    background: rgba(20, 184, 166, 0.1);
+}
+
+:is(.dark) .mentor-email:hover {
+    background: rgba(20, 184, 166, 0.2);
+    color: #5eead4;
+}
+
+/* ==========================================
+   ANIMATIONS & UTILS
+   ========================================== */
+
+.section-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.section-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Success Checkmark Animation */
+@keyframes popIn {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Smooth slide in animation */
+@keyframes slideIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   BREATHING WIDGET
+   ========================================== */
+.breathing-widget {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.core-circle {
+    width: 140px;
+    height: 140px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(20, 184, 166, 0.2);
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+:is(.dark) .core-circle {
+    background-color: #1e293b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #2dd4bf;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Animation States */
+.breathing-widget.inhaling .core-circle { animation: inhale 4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.breathing-widget.inhaling .ripple { animation: rippleOut 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
+.breathing-widget.holding .core-circle { transform: scale(1.25); animation: pulseHold 2s ease-in-out infinite; }
+.breathing-widget.holding .ripple { opacity: 0.3; transform: translate(-50%, -50%) scale(1.5); }
+
+.breathing-widget.exhaling .core-circle { animation: exhale 8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.breathing-widget.exhaling .ripple { animation: rippleIn 8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+
+.breathing-widget.resting .core-circle { transform: scale(1); }
+.breathing-widget.resting .ripple { opacity: 0; }
+
+@keyframes inhale { from { transform: scale(1); } to { transform: scale(1.25); } }
+@keyframes exhale { from { transform: scale(1.25); } to { transform: scale(1); } }
+
+@keyframes pulseHold {
+    0%, 100% { box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3); }
+    50% { box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); }
+}
+:is(.dark) @keyframes pulseHold {
+    0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); }
+    50% { box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8); }
+}
+
+@keyframes rippleOut { 0% { width: 140px; height: 140px; opacity: 0.6; } 100% { width: 300px; height: 300px; opacity: 0; } }
+@keyframes rippleIn { 0% { width: 300px; height: 300px; opacity: 0.4; } 100% { width: 140px; height: 140px; opacity: 0; } }
+
+.ripple-1 { animation-delay: 0s; }
+.ripple-2 { animation-delay: 0.8s; }
+.ripple-3 { animation-delay: 1.6s; }
+
+/* Scrollbar - Aesthetic styling */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f5f3ee; }
+::-webkit-scrollbar-thumb { 
+    background: linear-gradient(180deg, #8b5c2e 0%, #d4a574 100%); 
+    border-radius: 5px; 
+}
+::-webkit-scrollbar-thumb:hover { 
+    background: linear-gradient(180deg, #6b4423 0%, #8b5c2e 100%); 
+}
+:is(.dark) ::-webkit-scrollbar-track { background: #0f172a; }
+:is(.dark) ::-webkit-scrollbar-thumb { 
+    background: linear-gradient(180deg, #14b8a6 0%, #0d9488 100%); 
+}
+
+/* Admin Pickers */
+.icon-option { display: flex; width: 2.5rem; height: 2.5rem; align-items: center; justify-content: center; border-radius: 0.5rem; background-color: #f8fafc; color: #94a3b8; cursor: pointer; transition: all 0.2s; }
+:is(.dark) .icon-option { background-color: #334155; }
+.icon-option:hover { background-color: #f1f5f9; }
+:is(.dark) .icon-option:hover { background-color: #475569; }
+.icon-option.selected { background-color: #1e293b; color: white; border: 2px solid #94a3b8; }
+:is(.dark) .icon-option.selected { background-color: white; color: #0f172a; border-color: #64748b; }
+
+.color-option { width: 2rem; height: 2rem; border-radius: 9999px; cursor: pointer; transition: transform 0.2s; border: 2px solid transparent; }
+.color-option:hover { transform: scale(1.1); }
+.color-option.selected { transform: scale(1.1); border-color: #94a3b8; }
+:is(.dark) .color-option.selected { border-color: white; }
+
+/* Dark Mode Date Picker Fix */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator { cursor: pointer; opacity: 0.6; filter: invert(0.5); }
+:is(.dark) input[type="date"]::-webkit-calendar-picker-indicator,
+:is(.dark) input[type="time"]::-webkit-calendar-picker-indicator { filter: invert(1); }
+
+/* Enhanced Typography */
+body {
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, select, textarea {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced focus states */
+button:focus, a:focus {
+    outline: 2px solid #8b5c2e;
+    outline-offset: 2px;
+}
+
+:is(.dark) button:focus, :is(.dark) a:focus {
+    outline-color: #14b8a6;
+}
+
+/* Success message styling */
+.success-message {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border: 2px solid #6ee7b7;
+    color: #065f46;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    animation: slideIn 0.5s ease-out;
+}
+
+:is(.dark) .success-message {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+    border-color: #10b981;
+    color: #d1fae5;
+}
